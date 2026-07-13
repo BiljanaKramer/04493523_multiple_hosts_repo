@@ -1,0 +1,12 @@
+---
+- name: API call 1
+  ansible.builtin.uri:
+    url: https://httpbin.org/status/200
+    method: GET
+  register: api_result
+
+
+- name: API call 2
+  ansible.builtin.uri:
+    url: https://httpbin.org/status/200
+    method: GET
