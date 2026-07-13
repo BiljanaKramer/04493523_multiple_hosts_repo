@@ -5,6 +5,13 @@
 
   tasks:
 
+    - name: Show all hosts in the play
+      ansible.builtin.debug:
+        msg:
+          - "inventory_hostname={{ inventory_hostname }}"
+          - "ansible_play_hosts={{ ansible_play_hosts }}"
+          - "ansible_play_hosts_all={{ ansible_play_hosts_all }}"
+
     - name: Include child1
       ansible.builtin.include_tasks:
         file: tasks/child1.yaml
