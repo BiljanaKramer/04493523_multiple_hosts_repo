@@ -3,10 +3,13 @@
   ansible.builtin.uri:
     url: https://www.google.com
     method: GET
+  delegate_to: localhost
+  run_once: true
   register: api_result
-
 
 - name: API call 2
   ansible.builtin.uri:
     url: https://www.google.com
     method: GET
+  delegate_to: localhost
+  run_once: true
