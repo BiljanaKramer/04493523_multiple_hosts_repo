@@ -1,0 +1,4 @@
+[servers]
+vm-10-1-230-143.ans.cee.ral3.lab.eng.rdu2.redhat.com ansible_connection=local
+vm-10-1-230-81.ans.cee.ral3.lab.eng.rdu2.redhat.com ansible_connection=local
+vm-10-1-230-59.ans.cee.ral3.lab.eng.rdu2.redhat.com ansible_connection=local
