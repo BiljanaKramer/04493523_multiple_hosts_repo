@@ -1,0 +1,44 @@
+---
+- name: Create workflow state
+  ansible.builtin.set_fact:
+    workflow_status: started
+  delegate_to: localhost
+  run_once: true
+
+
+- name: Workflow processing block
+  block:
+
+    - name: Step 1
+      ansible.builtin.debug:
+        msg: "Running step 1 on {{ inventory_hostname }}"
+
+
+    - name: Step 2 fail intentionally on multiple hosts
+      ansible.builtin.fail:
+        msg: "Simulated workflow node failure"
+
+  rescue:
+
+    - name: Recovery step 1
+      ansible.builtin.debug:
+        msg: "Rescue step 1 executed on {{ inventory_hostname }}"
+
+
+    - name: Recovery step 2
+      ansible.builtin.debug:
+        msg: "Rescue step 2 executed"
+
+
+- name: Post recovery block
+  block:
+
+    - name: Step 5
+      ansible.builtin.debug:
+        msg: "Post recovery task"
+
+  rescue:
+
+    - name: Step 6
+      ansible.builtin.debug:
+        msg: "Final rescue task"
