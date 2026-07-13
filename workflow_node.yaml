@@ -7,10 +7,10 @@
 
     - name: Include child1
       ansible.builtin.include_tasks:
-        file: tasks/child1.yml
+        file: tasks/child1.yaml
       run_once: true
 
     - name: Include child2
       ansible.builtin.include_tasks:
-        file: tasks/child2.yml
+        file: tasks/child2.yaml
       run_once: true
